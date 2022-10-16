@@ -2,15 +2,37 @@
 
 A small example to show how to use **mysql** in python.
 
-## Usage
+## Requirements
+
+- [python3](https://www.python.org/)
+- [pip](https://pypi.org/project/pip/)
+
+## Prepare
+
+Activate virtual environment
 
 ```shell
-./main.py   # OR    python main.py
+source env/bin/activate
 ```
+
+Install dependencies
+
+```shell
+pip install -r requirements.txt
+```
+
+Deactivate the virtual environment when you finished
+
+```shell
+deactivate
+```
+
+## Usage
 
 Enter a string (name) and a number (revenue):
 
 ```shell
+./main.py   # OR    python main.py
 Customer name: foo
 Customer revenue: 123
 
