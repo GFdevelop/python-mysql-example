@@ -2,6 +2,8 @@
 
 A small example to show how to use **mysql** in python.
 
+It's only a teaching challenge for a my friend and it use by default (hardcoded) the "test" database and the table "customers".
+
 ## Requirements
 
 - [python3](https://www.python.org/)
@@ -29,7 +31,7 @@ deactivate
 
 ## Usage
 
-Enter a string (name) and a number (revenue):
+Run `./main.py`, enter a string (name) and a number (revenue):
 
 ```shell
 ./main.py   # OR    python main.py
