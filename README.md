@@ -2,7 +2,8 @@
 
 A small example to show how to use **mysql** in python.
 
-It's only a teaching challenge for a my friend and it use by default (hardcoded) the "test" database and the table "customers".
+It's only a teaching challenge for a my friend and
+it use by default (hardcoded) the "test" database and the "customers" table.
 
 ## Requirements
 
