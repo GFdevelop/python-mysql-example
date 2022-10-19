@@ -14,7 +14,7 @@ def create(name):
     print("CREATE")
 
     cursor = connection.cursor()
-    sql = "INSERT INTO customer (name) VALUES (%s)"
+    sql = "INSERT INTO customers (name) VALUES (%s)"
     cursor.execute(sql, (name,))
     cursor.close()
 
@@ -25,7 +25,7 @@ def read(name):
     print("READ:\t", end="")
 
     cursor = connection.cursor()
-    sql = "SELECT * FROM customer WHERE name = %s"
+    sql = "SELECT * FROM customers WHERE name = %s"
     cursor.execute(sql, (name,))
 
     items = cursor.fetchall()
@@ -38,7 +38,7 @@ def update(name, revenue):
     print("UPDATE")
 
     cursor = connection.cursor()
-    sql = "UPDATE customer SET revenue = %s WHERE name = %s"
+    sql = "UPDATE customers SET revenue = %s WHERE name = %s"
     cursor.execute(sql, (revenue, name,))
     cursor.close()
 
@@ -49,7 +49,7 @@ def delete(name):
     print("DELETE")
 
     cursor = connection.cursor()
-    sql = "DELETE FROM customer WHERE name = %s"
+    sql = "DELETE FROM customers WHERE name = %s"
     cursor.execute(sql, (name,))
     cursor.close()
 
@@ -65,10 +65,17 @@ def main():
             host="localhost",
             user=os.getenv('DB_USERNAME'),
             password=os.getenv('DB_PASSWORD'),
-            database="test",
         )
+
+        # create and/or open database and table
+        cursor = connection.cursor()
+        cursor.execute("CREATE DATABASE IF NOT EXISTS test;")
+        cursor.execute("USE test;")
+        cursor.execute("CREATE TABLE IF NOT EXISTS customers ( name VARCHAR(20) NOT NULL, revenue DECIMAL );")
+        cursor.close()
     except mysql.connector.Error as e:
         print(e)
+
 
     # ask for inputs
     name = input("Customer name: ")
