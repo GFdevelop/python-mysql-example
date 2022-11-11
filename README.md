@@ -12,6 +12,12 @@ it use by default (hardcoded) the "test" database and the "customers" table.
 
 ## Prepare
 
+Create `.env` file with your mysql credentials
+```shell
+DB_USERNAME=foo
+DB_PASSWORD=bar
+```
+
 Activate virtual environment
 
 ```shell
