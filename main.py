@@ -75,6 +75,7 @@ def main():
         cursor.close()
     except mysql.connector.Error as e:
         print(e)
+        exit(1)
 
 
     # ask for inputs
